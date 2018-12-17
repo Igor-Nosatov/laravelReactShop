@@ -27,15 +27,15 @@ class App extends Component {
           <Header />
           <Switch>
             <Route path='/' component={Home} />
-            <Route path='/' component={Shop} />
-            <Route path='/' component={Cart} />
-            <Route path='/' component={Checkout} />
-            <Route path='/' component={Contact} />
-            <Route path='/' component={EmptyCart} />
-            <Route path='/' component={Product} />
-            <Route path='/' component={Register} />
-            <Route path='/' component={Login} />
-            <Route path='/' component={Page404} />
+            <Route path='/shop' component={Shop} />
+            <Route path='/cart' component={Cart} />
+            <Route path='/checkout' component={Checkout} />
+            <Route path='/contact' component={Contact} />
+            <Route path='/empty_cart' component={EmptyCart} />
+            <Route path='/product/:id' component={Product} />
+            <Route path='/register' component={Register} />
+            <Route path='/login' component={Login} />
+            <Route path='/not_found' component={Page404} />
           </Switch>
           <Footer />
         </div>
