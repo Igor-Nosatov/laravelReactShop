@@ -13,7 +13,7 @@ import Cart from './components/Cart'
 import Checkout from './components/Checkout'
 import Contact from './components/Contact'
 import EmptyCart from './components/EmptyCart'
-import Product from './copmponents/Product'
+import Product from './components/Product'
 import Register from './components/Register'
 import Login from './components/Login'
 import Page404 from './components/Page404'
@@ -32,7 +32,7 @@ class App extends Component {
             <Route path='/checkout' component={Checkout} />
             <Route path='/contact' component={Contact} />
             <Route path='/empty_cart' component={EmptyCart} />
-            <Route path='/product/:id' component={Product} />
+            <Route path='/product' component={Product} />
             <Route path='/register' component={Register} />
             <Route path='/login' component={Login} />
             <Route path='/not_found' component={Page404} />
