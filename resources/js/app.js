@@ -14,6 +14,10 @@ import Checkout from './components/Checkout'
 import Contact from './components/Contact'
 import EmptyCart from './components/EmptyCart'
 import Product from './copmponents/Product'
+import Register from './components/Register'
+import Login from './components/Login'
+import Page404 from './components/Page404'
+
 
 class App extends Component {
   render () {
@@ -22,7 +26,16 @@ class App extends Component {
         <div>
           <Header />
           <Switch>
-            <Route path='/' comemponent={Home} />
+            <Route path='/' component={Home} />
+            <Route path='/' component={Shop} />
+            <Route path='/' component={Cart} />
+            <Route path='/' component={Checkout} />
+            <Route path='/' component={Contact} />
+            <Route path='/' component={EmptyCart} />
+            <Route path='/' component={Product} />
+            <Route path='/' component={Register} />
+            <Route path='/' component={Login} />
+            <Route path='/' component={Page404} />
           </Switch>
           <Footer />
         </div>
