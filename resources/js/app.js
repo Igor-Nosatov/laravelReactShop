@@ -4,6 +4,7 @@ require('./bootstrap');
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+
 import Header from './includes/Header'
 import Footer from './includes/Footer'
 
@@ -26,16 +27,16 @@ class App extends Component {
         <div>
           <Header />
           <Switch>
-            <Route path='/' component={Home} />
-            <Route path='/shop' component={Shop} />
-            <Route path='/cart' component={Cart} />
-            <Route path='/checkout' component={Checkout} />
-            <Route path='/contact' component={Contact} />
-            <Route path='/empty_cart' component={EmptyCart} />
-            <Route path='/product' component={Product} />
-            <Route path='/register' component={Register} />
-            <Route path='/login' component={Login} />
-            <Route path='/not_found' component={Page404} />
+            <Route exact path='/' name="Home" component={Home} />
+            <Route path='/shop' name="Shop"  component={Shop} />
+            <Route path='/cart' name="Cart"  component={Cart} />
+            <Route path='/checkout'  name="Checkout" component={Checkout} />
+            <Route path='/contact' name="Contact"  component={Contact} />
+            <Route path='/empty_cart' name="Empty"  component={EmptyCart} />
+            <Route path='/product'  name="Product" component={Product} />
+            <Route path='/register'  name="Register" component={Register} />
+            <Route path='/login'  name="Login" component={Login} />
+            <Route path='/not_found'  name="NotFound" component={Page404} />
           </Switch>
           <Footer />
         </div>

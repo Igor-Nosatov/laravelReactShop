@@ -19,7 +19,6 @@ class Register extends Component {
   }
 
   render () {
-    const { projects } = this.state
     return (
       <section className="register_area p_100">
               <div className="container">

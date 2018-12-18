@@ -19,36 +19,69 @@ class Contact extends Component {
   }
 
   render () {
-    const { projects } = this.state
     return (
-      <div className='container py-4'>
-        <div className='row justify-content-center'>
-          <div className='col-md-8'>
-            <div className='card'>
-              <div className='card-header'>All projects</div>
-              <div className='card-body'>
-                <Link className='btn btn-primary btn-sm mb-3' to='/create'>
-                  Create new project
-                </Link>
-                <ul className='list-group list-group-flush'>
-                  {projects.map(project => (
-                    <Link
-                      className='list-group-item list-group-item-action d-flex justify-content-between align-items-center'
-                      to={`/${project.id}`}
-                      key={project.id}
-                    >
-                      {project.name}
-                      <span className='badge badge-primary badge-pill'>
-                        {project.tasks_count}
-                      </span>
-                    </Link>
-                  ))}
-                </ul>
-              </div>
+      <section className="contact_area p_100">
+            <div className="container">
+                <div className="contact_title">
+                    <h2>Get in Touch</h2>
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui.</p>
+                </div>
+                <div className="row contact_details">
+                    <div className="col-lg-4 col-md-6">
+                        <div className="media">
+                            <div className="d-flex">
+                                <i className="fa fa-map-marker" aria-hidden="true"></i>
+                            </div>
+                            <div className="media-body">
+                                <p>House # 402, Roboto Street,<br />New York, USA.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-6">
+                        <div className="media">
+                            <div className="d-flex">
+                                <i className="fa fa-phone" aria-hidden="true"></i>
+                            </div>
+                            <div className="media-body">
+                                <a href="tel:+1109171234567">+110 - 917 - 123 - 4567</a>
+                                <a href="tel:+1101911897654">+110 - 191 - 189 - 7654</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-6">
+                        <div className="media">
+                            <div className="d-flex">
+                                <i className="fa fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <div className="media-body">
+                                <a href="mailto:busines@persuit.com">busines@persuit.com</a>
+                                <a href="mailto:support@persuit.com">support@persuit.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="contact_form_inner">
+                    <h3>Drop a Message</h3>
+                    <form className="contact_us_form row" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                        <div className="form-group col-lg-4">
+                            <input type="text" className="form-control" id="name" name="name" placeholder="Full Name *"  />
+                        </div>
+                        <div className="form-group col-lg-4">
+                            <input type="email" className="form-control" id="email" name="email" placeholder="Email Address *"  />
+                        </div>
+                        <div className="form-group col-lg-4">
+                            <input type="text" className="form-control" id="website" name="website" placeholder="Your Website" />
+                        </div>
+                        <div className="form-group col-lg-12">
+                            <textarea className="form-control" name="message" id="message" rows="1" placeholder="Type Your Message..."></textarea>
+                        </div>
+                        <div className="form-group col-lg-12">
+                            <button type="submit" value="submit" className="btn update_btn form-control">Send Message</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
+        </section>
     )
   }
 }

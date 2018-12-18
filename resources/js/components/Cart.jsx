@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+
 
 class Cart extends Component {
   constructor () {
@@ -19,7 +19,6 @@ class Cart extends Component {
   }
 
   render () {
-    const { projects } = this.state
     return (
       <section className="shopping_cart_area p_100">
           <div className="container">

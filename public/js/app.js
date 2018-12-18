@@ -389,6 +389,46 @@ module.exports = {
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (true) {
+  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
+    Symbol.for &&
+    Symbol.for('react.element')) ||
+    0xeac7;
+
+  var isValidElement = function(object) {
+    return typeof object === 'object' &&
+      object !== null &&
+      object.$$typeof === REACT_ELEMENT_TYPE;
+  };
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(66)(isValidElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = require('./factoryWithThrowingShims')();
+}
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(39);
+
+/***/ }),
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -448,46 +488,6 @@ module.exports = {
 
 
 
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-if (true) {
-  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
-    Symbol.for &&
-    Symbol.for('react.element')) ||
-    0xeac7;
-
-  var isValidElement = function(object) {
-    return typeof object === 'object' &&
-      object !== null &&
-      object.$$typeof === REACT_ELEMENT_TYPE;
-  };
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(66)(isValidElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = require('./factoryWithThrowingShims')();
-}
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(39);
 
 /***/ }),
 /* 5 */
@@ -1288,7 +1288,7 @@ var createTransitionManager = function createTransitionManager() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -14788,7 +14788,7 @@ var isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_invariant__);
@@ -14920,7 +14920,7 @@ Link.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__matchPath__ = __webpack_require__(18);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -15558,11 +15558,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__includes_Header__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__includes_Footer__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Home__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Home___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_Home__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Shop__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Cart__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Checkout__ = __webpack_require__(95);
@@ -15581,6 +15580,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 __webpack_require__(35);
+
 
 
 
@@ -15621,16 +15621,16 @@ var App = function (_Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["d" /* Switch */],
             null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/', component: __WEBPACK_IMPORTED_MODULE_5__components_Home__["default"] }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/shop', component: __WEBPACK_IMPORTED_MODULE_6__components_Shop__["a" /* default */] }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/cart', component: __WEBPACK_IMPORTED_MODULE_7__components_Cart__["a" /* default */] }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/checkout', component: __WEBPACK_IMPORTED_MODULE_8__components_Checkout__["a" /* default */] }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/contact', component: __WEBPACK_IMPORTED_MODULE_9__components_Contact__["a" /* default */] }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/empty_cart', component: __WEBPACK_IMPORTED_MODULE_10__components_EmptyCart__["a" /* default */] }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/product', component: __WEBPACK_IMPORTED_MODULE_11__components_Product__["a" /* default */] }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/register', component: __WEBPACK_IMPORTED_MODULE_12__components_Register__["a" /* default */] }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/login', component: __WEBPACK_IMPORTED_MODULE_13__components_Login__["a" /* default */] }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/not_found', component: __WEBPACK_IMPORTED_MODULE_14__components_Page404__["a" /* default */] })
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { exact: true, path: '/', name: 'Home', component: __WEBPACK_IMPORTED_MODULE_5__components_Home__["a" /* default */] }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/shop', name: 'Shop', component: __WEBPACK_IMPORTED_MODULE_6__components_Shop__["a" /* default */] }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/cart', name: 'Cart', component: __WEBPACK_IMPORTED_MODULE_7__components_Cart__["a" /* default */] }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/checkout', name: 'Checkout', component: __WEBPACK_IMPORTED_MODULE_8__components_Checkout__["a" /* default */] }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/contact', name: 'Contact', component: __WEBPACK_IMPORTED_MODULE_9__components_Contact__["a" /* default */] }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/empty_cart', name: 'Empty', component: __WEBPACK_IMPORTED_MODULE_10__components_EmptyCart__["a" /* default */] }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/product', name: 'Product', component: __WEBPACK_IMPORTED_MODULE_11__components_Product__["a" /* default */] }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/register', name: 'Register', component: __WEBPACK_IMPORTED_MODULE_12__components_Register__["a" /* default */] }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/login', name: 'Login', component: __WEBPACK_IMPORTED_MODULE_13__components_Login__["a" /* default */] }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: '/not_found', name: 'NotFound', component: __WEBPACK_IMPORTED_MODULE_14__components_Page404__["a" /* default */] })
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__includes_Footer__["a" /* default */], null)
         )
@@ -15669,7 +15669,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(4);
+window.axios = __webpack_require__(3);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -60601,7 +60601,7 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(16);
@@ -62142,7 +62142,7 @@ var createMemoryHistory = function createMemoryHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(16);
@@ -62218,7 +62218,7 @@ HashRouter.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(17);
@@ -62282,7 +62282,7 @@ MemoryRouter.propTypes = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Route__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Link__ = __webpack_require__(28);
@@ -62388,7 +62388,7 @@ module.exports = Array.isArray || function (arr) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_invariant__);
@@ -62490,7 +62490,7 @@ Prompt.contextTypes = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_warning__);
@@ -62634,7 +62634,7 @@ Redirect.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Router__ = __webpack_require__(17);
@@ -62807,7 +62807,7 @@ StaticRouter.childContextTypes = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_warning__);
@@ -62932,7 +62932,7 @@ Switch.propTypes = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__);
@@ -63056,72 +63056,72 @@ module.exports = hoistNonReactStatics;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(4);
 
 
 
 var Header = function Header() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'header',
-        { className: 'shop_header_area carousel_menu_area' },
+        "header",
+        { className: "shop_header_area carousel_menu_area" },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'carousel_top_header black_top_header row m0' },
+            "div",
+            { className: "carousel_top_header black_top_header row m0" },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'container' },
+                "div",
+                { className: "container" },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'carousel_top_h_inner' },
+                    "div",
+                    { className: "carousel_top_h_inner" },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'float-md-left' },
+                        "div",
+                        { className: "float-md-left" },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'div',
-                            { className: 'top_header_left' },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'selector' })
+                            "div",
+                            { className: "top_header_left" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "selector" })
                         )
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'float-md-right' },
+                        "div",
+                        { className: "float-md-right" },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'ul',
-                            { className: 'account_list' },
+                            "ul",
+                            { className: "account_list" },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
+                                "li",
                                 null,
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '#' },
-                                    'My Account'
+                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                    { className: "navbar-brand", to: "/login" },
+                                    "Login"
                                 )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
+                                "li",
                                 null,
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '#' },
-                                    'Wish List (0)'
+                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                    { className: "navbar-brand", to: "/cart" },
+                                    "Wishlist"
                                 )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
+                                "li",
                                 null,
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '#' },
-                                    'Shopping Cart'
+                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                    { className: "navbar-brand", to: "/cart" },
+                                    "Shopping Cart"
                                 )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
+                                "li",
                                 null,
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '#' },
-                                    'Checkout'
+                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                    { className: "navbar-brand", to: "/checkout" },
+                                    "Checkout"
                                 )
                             )
                         )
@@ -63130,344 +63130,95 @@ var Header = function Header() {
             )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'carousel_menu_inner' },
+            "div",
+            { className: "carousel_menu_inner" },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'container' },
+                "div",
+                { className: "container" },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'nav',
-                    { className: 'navbar navbar-expand-lg navbar-light bg-light' },
+                    "nav",
+                    { className: "navbar navbar-expand-lg navbar-light bg-light" },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'a',
-                        { className: 'navbar-brand', href: '#' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '', alt: '' })
+                        "a",
+                        { className: "navbar-brand", href: "#" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "", alt: "" })
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'button',
-                        { className: 'navbar-toggler', type: 'button', 'data-toggle': 'collapse', 'data-target': '#navbarSupportedContent', 'aria-controls': 'navbarSupportedContent', 'aria-expanded': 'false', 'aria-label': 'Toggle navigation' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'navbar-toggler-icon' })
+                        "button",
+                        { className: "navbar-toggler", type: "button", "data-toggle": "collapse", "data-target": "#navbarSupportedContent", "aria-controls": "navbarSupportedContent", "aria-expanded": "false", "aria-label": "Toggle navigation" },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", { className: "navbar-toggler-icon" })
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'collapse navbar-collapse', id: 'navbarSupportedContent' },
+                        "div",
+                        { className: "collapse navbar-collapse", id: "navbarSupportedContent" },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'ul',
-                            { className: 'navbar-nav mr-auto' },
+                            "ul",
+                            { className: "navbar-nav mr-auto" },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav-item dropdown submenu active' },
+                                "li",
+                                { className: "nav-item dropdown submenu active" },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { className: 'nav-link dropdown-toggle', href: '#', role: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false' },
-                                    'Home ',
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-angle-down', 'aria-hidden': 'true' })
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'ul',
-                                    { className: 'dropdown-menu' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'index.html' },
-                                            'Home Simple'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'home-carousel.html' },
-                                            'Home Carousel'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'home-fullwidth.html' },
-                                            'Home Full Width'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'home-parallax.html' },
-                                            'Home Parallax'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'home-sidebar.html' },
-                                            'Home Boxed'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'home-fixed-menu.html' },
-                                            'Home Fixed'
-                                        )
-                                    )
+                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                    { className: "navbar-brand", to: "/" },
+                                    "Home"
                                 )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav-item dropdown submenu' },
+                                "li",
+                                { className: "nav-item dropdown submenu" },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { className: 'nav-link dropdown-toggle', href: '#', role: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false' },
-                                    'Pages ',
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-angle-down', 'aria-hidden': 'true' })
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'ul',
-                                    { className: 'dropdown-menu' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'compare.html' },
-                                            'Compare'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'checkout.html' },
-                                            'Checkout Method'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'register.html' },
-                                            'Checkout Register'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'track.html' },
-                                            'Track'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'login.html' },
-                                            'Login'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: '404.html' },
-                                            '404'
-                                        )
-                                    )
+                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                    { className: "navbar-brand", to: "/shop" },
+                                    "Shop"
                                 )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav-item dropdown submenu' },
+                                "li",
+                                { className: "nav-item" },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { className: 'nav-link dropdown-toggle', href: '#', role: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false' },
-                                    'Shop ',
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-angle-down', 'aria-hidden': 'true' })
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'ul',
-                                    { className: 'dropdown-menu' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'categories-no-sidebar-2column.html' },
-                                            'Prodcut No Sidebar'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'categories-no-sidebar-3column.html' },
-                                            'Prodcut Two Column'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'categories-no-sidebar-4column.html' },
-                                            'Product Grid'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'categories-left-sidebar.html' },
-                                            'Categories Left Sidebar'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'categories-right-sidebar.html' },
-                                            'Categories Right Sidebar'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'categories-grid-left-sidebar.html' },
-                                            'Categories Grid Sidebar'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'product-details.html' },
-                                            'Prodcut Details 01'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'product-details2.html' },
-                                            'Prodcut Details 02'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'product-details3.html' },
-                                            'Prodcut Details 03'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'shopping-cart.html' },
-                                            'Shopping Cart 01'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'shopping-cart2.html' },
-                                            'Shopping Cart 02'
-                                        )
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'li',
-                                        { className: 'nav-item' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'a',
-                                            { className: 'nav-link', href: 'empty-cart.html' },
-                                            'Empty Cart'
-                                        )
-                                    )
+                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                    { className: "navbar-brand", to: "/checkout" },
+                                    "Checkout"
                                 )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav-item' },
+                                "li",
+                                { className: "nav-item" },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { className: 'nav-link', href: '#' },
-                                    'Blog'
-                                )
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav-item' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { className: 'nav-link', href: '#' },
-                                    'lookbook'
-                                )
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'nav-item' },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { className: 'nav-link', href: 'contact.html' },
-                                    'Contact'
+                                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                                    { className: "navbar-brand", to: "/contact" },
+                                    "Contact"
                                 )
                             )
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'ul',
-                            { className: 'navbar-nav justify-content-end' },
+                            "ul",
+                            { className: "navbar-nav justify-content-end" },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'search_icon' },
+                                "li",
+                                { className: "search_icon" },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '#' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'icon-magnifier icons' })
+                                    "a",
+                                    { href: "#" },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "icon-magnifier icons" })
                                 )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'user_icon' },
+                                "li",
+                                { className: "user_icon" },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '#' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'icon-user icons' })
+                                    "a",
+                                    { href: "#" },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "icon-user icons" })
                                 )
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'li',
-                                { className: 'cart_cart' },
+                                "li",
+                                { className: "cart_cart" },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { href: '#' },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'icon-handbag icons' })
+                                    "a",
+                                    { href: "#" },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", { className: "icon-handbag icons" })
                                 )
                             )
                         )
@@ -63487,7 +63238,7 @@ var Header = function Header() {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(4);
 
 
 
@@ -63828,20 +63579,1584 @@ var Footer = function Footer() {
 
 /***/ }),
 /* 92 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: Expected corresponding JSX closing tag for <ul> (35:21)\n\n\u001b[0m \u001b[90m 33 | \u001b[39m                     \u001b[33m<\u001b[39m\u001b[33mli\u001b[39m data\u001b[33m-\u001b[39mindex\u001b[33m=\u001b[39m\u001b[32m\"rs-137221490\"\u001b[39m data\u001b[33m-\u001b[39mtransition\u001b[33m=\u001b[39m\u001b[32m\"scaledownfrombottom\"\u001b[39m data\u001b[33m-\u001b[39mslotamount\u001b[33m=\u001b[39m\u001b[32m\"7\"\u001b[39m  data\u001b[33m-\u001b[39measein\u001b[33m=\u001b[39m\u001b[32m\"Power3.easeInOut\"\u001b[39m   data\u001b[33m-\u001b[39measeout\u001b[33m=\u001b[39m\u001b[32m\"Power3.easeInOut\"\u001b[39m data\u001b[33m-\u001b[39mmasterspeed\u001b[33m=\u001b[39m\u001b[32m\"1500\"\u001b[39m  data\u001b[33m-\u001b[39mthumb\u001b[33m=\u001b[39m\u001b[32m\"img/product/product-details/p-details-tab-1.jpg\"\u001b[39m data\u001b[33m-\u001b[39mrotate\u001b[33m=\u001b[39m\u001b[32m\"0\"\u001b[39m  data\u001b[33m-\u001b[39mfstransition\u001b[33m=\u001b[39m\u001b[32m\"fade\"\u001b[39m data\u001b[33m-\u001b[39mfsmasterspeed\u001b[33m=\u001b[39m\u001b[32m\"1500\"\u001b[39m   data\u001b[33m-\u001b[39mfsslotamount\u001b[33m=\u001b[39m\u001b[32m\"7\"\u001b[39m data\u001b[33m-\u001b[39msaveperformance\u001b[33m=\u001b[39m\u001b[32m\"off\"\u001b[39m  data\u001b[33m-\u001b[39mtitle\u001b[33m=\u001b[39m\u001b[32m\"Ishtar X Tussilago\"\u001b[39m data\u001b[33m-\u001b[39mparam1\u001b[33m=\u001b[39m\u001b[32m\"25/08/2015\"\u001b[39m data\u001b[33m-\u001b[39mdescription\u001b[33m=\u001b[39m\u001b[32m\"\"\u001b[39m \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 34 | \u001b[39m                         \u001b[33m<\u001b[39m\u001b[33mimg\u001b[39m src\u001b[33m=\u001b[39m\u001b[32m\"img/product/product-details/p-details-big-1.jpg\"\u001b[39m  alt\u001b[33m=\u001b[39m\u001b[32m\"\"\u001b[39m data\u001b[33m-\u001b[39mbgposition\u001b[33m=\u001b[39m\u001b[32m\"center center\"\u001b[39m data\u001b[33m-\u001b[39mbgfit\u001b[33m=\u001b[39m\u001b[32m\"cover\"\u001b[39m data\u001b[33m-\u001b[39mbgrepeat\u001b[33m=\u001b[39m\u001b[32m\"no-repeat\"\u001b[39m data\u001b[33m-\u001b[39mbgparallax\u001b[33m=\u001b[39m\u001b[32m\"5\"\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"rev-slidebg\"\u001b[39m data\u001b[33m-\u001b[39mno\u001b[33m-\u001b[39mretina \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 | \u001b[39m                     \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mli\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m    | \u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 | \u001b[39m                     \u001b[33m<\u001b[39m\u001b[33mli\u001b[39m data\u001b[33m-\u001b[39mindex\u001b[33m=\u001b[39m\u001b[32m\"rs-136228343\"\u001b[39m data\u001b[33m-\u001b[39mtransition\u001b[33m=\u001b[39m\u001b[32m\"scaledownfrombottom\"\u001b[39m data\u001b[33m-\u001b[39mslotamount\u001b[33m=\u001b[39m\u001b[32m\"7\"\u001b[39m  data\u001b[33m-\u001b[39measein\u001b[33m=\u001b[39m\u001b[32m\"Power3.easeInOut\"\u001b[39m data\u001b[33m-\u001b[39measeout\u001b[33m=\u001b[39m\u001b[32m\"Power3.easeInOut\"\u001b[39m data\u001b[33m-\u001b[39mmasterspeed\u001b[33m=\u001b[39m\u001b[32m\"1500\"\u001b[39m  data\u001b[33m-\u001b[39mthumb\u001b[33m=\u001b[39m\u001b[32m\"img/product/product-details/p-details-tab-2.jpg\"\u001b[39m  data\u001b[33m-\u001b[39mrotate\u001b[33m=\u001b[39m\u001b[32m\"0\"\u001b[39m  data\u001b[33m-\u001b[39msaveperformance\u001b[33m=\u001b[39m\u001b[32m\"off\"\u001b[39m  data\u001b[33m-\u001b[39mtitle\u001b[33m=\u001b[39m\u001b[32m\"Los Angeles\"\u001b[39m data\u001b[33m-\u001b[39mparam1\u001b[33m=\u001b[39m\u001b[32m\"13/08/2015\"\u001b[39m data\u001b[33m-\u001b[39mdescription\u001b[33m=\u001b[39m\u001b[32m\"\"\u001b[39m \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 37 | \u001b[39m                         \u001b[33m<\u001b[39m\u001b[33mimg\u001b[39m src\u001b[33m=\u001b[39m\u001b[32m\"img/product/product-details/p-details-big-1.jpg\"\u001b[39m  alt\u001b[33m=\u001b[39m\u001b[32m\"\"\u001b[39m data\u001b[33m-\u001b[39mbgposition\u001b[33m=\u001b[39m\u001b[32m\"center center\"\u001b[39m data\u001b[33m-\u001b[39mbgfit\u001b[33m=\u001b[39m\u001b[32m\"cover\"\u001b[39m data\u001b[33m-\u001b[39mbgrepeat\u001b[33m=\u001b[39m\u001b[32m\"no-repeat\"\u001b[39m data\u001b[33m-\u001b[39mbgparallax\u001b[33m=\u001b[39m\u001b[32m\"5\"\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"rev-slidebg\"\u001b[39m data\u001b[33m-\u001b[39mno\u001b[33m-\u001b[39mretina  \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 38 | \u001b[39m                     \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mli\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n");
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var Home = function (_Component) {
+    _inherits(Home, _Component);
+
+    function Home() {
+        _classCallCheck(this, Home);
+
+        var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this));
+
+        _this.state = {
+            projects: []
+        };
+        return _this;
+    }
+
+    _createClass(Home, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/projects').then(function (response) {
+                _this2.setState({
+                    projects: response.data
+                });
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                'div',
+                null,
+                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    'section',
+                    { className: 'special_offer_area' },
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        'div',
+                        { className: 'container' },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'div',
+                            { className: 'row' },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'col-lg-6' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'special_offer_item' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/feature-add/special-offer-1.jpg', alt: '' }),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'hover_text' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'h4',
+                                            null,
+                                            'Special Offer'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'h5',
+                                            null,
+                                            'Young Couple'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { className: 'shop_now_btn', href: '#' },
+                                            'Shop Now'
+                                        )
+                                    )
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'col-lg-6' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'special_offer_item2' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/feature-add/special-offer-2.jpg', alt: '' }),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'hover_text' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'h5',
+                                            null,
+                                            'girls bag'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { className: 'shop_now_btn', href: '#' },
+                                            'Shop Now'
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    'section',
+                    { className: 'fillter_latest_product' },
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        'div',
+                        { className: 'container' },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'div',
+                            { className: 'single_c_title' },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'h2',
+                                null,
+                                'Our Latest Product'
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'div',
+                            { className: 'fillter_l_p_inner' },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'ul',
+                                { className: 'fillter_l_p' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'li',
+                                    { className: 'active', 'data-filter': '*' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'a',
+                                        { href: '#' },
+                                        'men\'s'
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'li',
+                                    { 'data-filter': '.woman' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'a',
+                                        { href: '#' },
+                                        'Woman'
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'li',
+                                    { 'data-filter': '.acc' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'a',
+                                        { href: '#' },
+                                        'Accessories'
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'li',
+                                    { 'data-filter': '.shoes' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'a',
+                                        { href: '#' },
+                                        'Shoes'
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'li',
+                                    { 'data-filter': '.bags' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'a',
+                                        { href: '#' },
+                                        'Bags'
+                                    )
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'row isotope_l_p_inner' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-3 col-md-4 col-sm-6 woman bags' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'l_product_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_img' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/l-product-1.jpg', alt: '' })
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'ul',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_piechart' })
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { className: 'add_cart_btn', href: '#' },
+                                                        'Add To Cart'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_heart_alt' })
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'Womens Libero'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'del',
+                                                    null,
+                                                    '$45.50'
+                                                ),
+                                                '  $40'
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-3 col-md-4 col-sm-6 acc shoes' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'l_product_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_img' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/l-product-2.jpg', alt: '' })
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'ul',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_piechart' })
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { className: 'add_cart_btn', href: '#' },
+                                                        'Add To Cart'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_heart_alt' })
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'Womens Libero'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'del',
+                                                    null,
+                                                    '$45.50'
+                                                ),
+                                                '  $40'
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-3 col-md-4 col-sm-6 woman shoes' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'l_product_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_img' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/l-product-3.jpg', alt: '' })
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'ul',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_piechart' })
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { className: 'add_cart_btn', href: '#' },
+                                                        'Add To Cart'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_heart_alt' })
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'Womens Libero'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'del',
+                                                    null,
+                                                    '$45.50'
+                                                ),
+                                                '  $40'
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-3 col-md-4 col-sm-6 woman shoes' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'l_product_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_img' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/l-product-4.jpg', alt: '' })
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'ul',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_piechart' })
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { className: 'add_cart_btn', href: '#' },
+                                                        'Add To Cart'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_heart_alt' })
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'Womens Libero'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'del',
+                                                    null,
+                                                    '$45.50'
+                                                ),
+                                                '  $40'
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-3 col-md-4 col-sm-6 woman shoes' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'l_product_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_img' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/l-product-5.jpg', alt: '' })
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'ul',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_piechart' })
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { className: 'add_cart_btn', href: '#' },
+                                                        'Add To Cart'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_heart_alt' })
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'Womens Libero'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'del',
+                                                    null,
+                                                    '$45.50'
+                                                ),
+                                                '  $40'
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-3 col-md-4 col-sm-6 acc shoes bags' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'l_product_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_img' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/l-product-6.jpg', alt: '' })
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'ul',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_piechart' })
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { className: 'add_cart_btn', href: '#' },
+                                                        'Add To Cart'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_heart_alt' })
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'Womens Libero'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'del',
+                                                    null,
+                                                    '$45.50'
+                                                ),
+                                                '  $40'
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-3 col-md-4 col-sm-6 acc bags' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'l_product_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_img' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/l-product-7.jpg', alt: '' })
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'ul',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_piechart' })
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { className: 'add_cart_btn', href: '#' },
+                                                        'Add To Cart'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_heart_alt' })
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'Womens Libero'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'del',
+                                                    null,
+                                                    '$45.50'
+                                                ),
+                                                '  $40'
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-3 col-md-4 col-sm-6 acc bags' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'l_product_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_img' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/l-product-8.jpg', alt: '' })
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'ul',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_piechart' })
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { className: 'add_cart_btn', href: '#' },
+                                                        'Add To Cart'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_heart_alt' })
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'Womens Libero'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'del',
+                                                    null,
+                                                    '$45.50'
+                                                ),
+                                                '  $40'
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    'section',
+                    { className: 'product_listing_area' },
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        'div',
+                        { className: 'container' },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'div',
+                            { className: 'row p_listing_inner' },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'col-lg-4' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'row' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-lg-6 col-sm-8' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'p_list_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h3',
+                                                null,
+                                                'Men'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'ul',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Down Jackets'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Hoodies'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Suits'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Jeans'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Casual Pants'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Sunglass'
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-lg-6 col-sm-4' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'p_list_img' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/p-categories-list/product-l-1.jpg', alt: '' })
+                                        )
+                                    )
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'col-lg-4' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'row' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-lg-6 col-sm-8' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'p_list_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h3',
+                                                null,
+                                                'Women'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'ul',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Down Jackets'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Hoodies'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Suits'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Jeans'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Casual Pants'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Sunglass'
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-lg-6 col-sm-4' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'p_list_img' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/p-categories-list/product-l-2.jpg', alt: '' })
+                                        )
+                                    )
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'col-lg-4' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'row' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-lg-6 col-sm-8' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'p_list_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h3',
+                                                null,
+                                                'Accessories'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'ul',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Down Jackets'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Hoodies'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Suits'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Jeans'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Casual Pants'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        'Sunglass'
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-lg-6 col-sm-4' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'p_list_img' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/p-categories-list/product-l-3.jpg', alt: '' })
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    'section',
+                    { className: 'feature_product_area' },
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        'div',
+                        { className: 'container' },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'div',
+                            { className: 'f_p_inner' },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'row' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-3' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'f_product_left' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 's_m_title' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h2',
+                                                null,
+                                                'Featured Products'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'f_product_inner' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'media' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'd-flex' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/featured-product/f-p-1.jpg', alt: '' })
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'media-body' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h4',
+                                                        null,
+                                                        'Oxford Shirt'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h5',
+                                                        null,
+                                                        '$45.05'
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'media' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'd-flex' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/featured-product/f-p-2.jpg', alt: '' })
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'media-body' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h4',
+                                                        null,
+                                                        'Puffer Jacket'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h5',
+                                                        null,
+                                                        '$45.05'
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'media' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'd-flex' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/featured-product/f-p-3.jpg', alt: '' })
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'media-body' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h4',
+                                                        null,
+                                                        'Leather Bag'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h5',
+                                                        null,
+                                                        '$45.05'
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'media' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'd-flex' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/featured-product/f-p-4.jpg', alt: '' })
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'media-body' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h4',
+                                                        null,
+                                                        'Casual Shoes'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h5',
+                                                        null,
+                                                        '$45.05'
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-9' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'fillter_slider_inner' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'ul',
+                                            { className: 'portfolio_filter' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { className: 'active', 'data-filter': '*' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { href: '#' },
+                                                    'men\'s'
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { 'data-filter': '.woman' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { href: '#' },
+                                                    'Woman'
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { 'data-filter': '.shoes' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { href: '#' },
+                                                    'Shoes'
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { 'data-filter': '.bags' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { href: '#' },
+                                                    'Bags'
+                                                )
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'fillter_slider owl-carousel' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'item shoes' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'fillter_product_item bags' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_img' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/fillter-product/f-product-1.jpg', alt: '' }),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            { className: 'sale' },
+                                                            'Sale'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_text' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            null,
+                                                            'Nike Max Air Vapor Power'
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h4',
+                                                            null,
+                                                            '$45.05'
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'item woman shoes bags' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'fillter_product_item' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_img' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/fillter-product/f-product-2.jpg', alt: '' }),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            { className: 'new' },
+                                                            'New'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_text' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            null,
+                                                            'Fossil Watch'
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h4',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'del',
+                                                                null,
+                                                                '$250'
+                                                            ),
+                                                            ' $110'
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'item woman shoes' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'fillter_product_item' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_img' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/fillter-product/f-product-3.jpg', alt: '' }),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            { className: 'discount' },
+                                                            '-10%'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_text' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            null,
+                                                            'High Heel'
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h4',
+                                                            null,
+                                                            '$45.05'
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'item shoes' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'fillter_product_item bags' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_img' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/fillter-product/f-product-1.jpg', alt: '' }),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            { className: 'sale' },
+                                                            'Sale'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_text' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            null,
+                                                            'Nike Max Air Vapor Power'
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h4',
+                                                            null,
+                                                            '$45.05'
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'item woman shoes bags' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'fillter_product_item' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_img' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/fillter-product/f-product-2.jpg', alt: '' }),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            { className: 'new' },
+                                                            'New'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_text' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            null,
+                                                            'Fossil Watch'
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h4',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'del',
+                                                                null,
+                                                                '$250'
+                                                            ),
+                                                            ' $110'
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'item woman shoes' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'fillter_product_item' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_img' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/fillter-product/f-product-3.jpg', alt: '' }),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            { className: 'discount' },
+                                                            '-10%'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_text' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            null,
+                                                            'High Heel'
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h4',
+                                                            null,
+                                                            '$45.05'
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'item shoes' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'fillter_product_item bags' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_img' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/fillter-product/f-product-1.jpg', alt: '' }),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            { className: 'sale' },
+                                                            'Sale'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_text' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            null,
+                                                            'Nike Max Air Vapor Power'
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h4',
+                                                            null,
+                                                            '$45.05'
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'item woman shoes bags' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'fillter_product_item' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_img' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/fillter-product/f-product-2.jpg', alt: '' }),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            { className: 'new' },
+                                                            'New'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_text' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            null,
+                                                            'Fossil Watch'
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h4',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'del',
+                                                                null,
+                                                                '$250'
+                                                            ),
+                                                            ' $110'
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'item woman shoes' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'fillter_product_item' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_img' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/fillter-product/f-product-3.jpg', alt: '' }),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            { className: 'discount' },
+                                                            '-10%'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'div',
+                                                        { className: 'f_p_text' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h5',
+                                                            null,
+                                                            'High Heel'
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'h4',
+                                                            null,
+                                                            '$45.05'
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    'section',
+                    { className: 'from_blog_area' },
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        'div',
+                        { className: 'container' },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'div',
+                            { className: 'from_blog_inner' },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'c_main_title' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'h2',
+                                    null,
+                                    'From The Blog'
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'row' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-4 col-sm-6' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'from_blog_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/blog/from-blog/f-blog-1.jpg', alt: '' }),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'f_blog_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                null,
+                                                'fashion'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'p',
+                                                null,
+                                                'Neque porro quisquam est qui dolorem ipsum'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h6',
+                                                null,
+                                                '21.09.2017'
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-4 col-sm-6' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'from_blog_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/blog/from-blog/f-blog-2.jpg', alt: '' }),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'f_blog_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                null,
+                                                'fashion'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'p',
+                                                null,
+                                                'Neque porro quisquam est qui dolorem ipsum'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h6',
+                                                null,
+                                                '21.09.2017'
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-4 col-sm-6' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'from_blog_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/blog/from-blog/f-blog-3.jpg', alt: '' }),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'f_blog_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                null,
+                                                'fashion'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'p',
+                                                null,
+                                                'Neque porro quisquam est qui dolorem ipsum'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h6',
+                                                null,
+                                                '21.09.2017'
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Home;
+}(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Home);
 
 /***/ }),
 /* 93 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(4);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -63855,89 +65170,1170 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var Shop = function (_Component) {
-  _inherits(Shop, _Component);
+    _inherits(Shop, _Component);
 
-  function Shop() {
-    _classCallCheck(this, Shop);
+    function Shop() {
+        _classCallCheck(this, Shop);
 
-    var _this = _possibleConstructorReturn(this, (Shop.__proto__ || Object.getPrototypeOf(Shop)).call(this));
+        var _this = _possibleConstructorReturn(this, (Shop.__proto__ || Object.getPrototypeOf(Shop)).call(this));
 
-    _this.state = {
-      projects: []
-    };
-    return _this;
-  }
-
-  _createClass(Shop, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/projects').then(function (response) {
-        _this2.setState({
-          projects: response.data
-        });
-      });
+        _this.state = {
+            projects: []
+        };
+        return _this;
     }
-  }, {
-    key: 'render',
-    value: function render() {
-      var projects = this.state.projects;
 
-      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        'div',
-        { className: 'container py-4' },
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'div',
-          { className: 'row justify-content-center' },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'div',
-            { className: 'col-md-8' },
-            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-              'div',
-              { className: 'card' },
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-header' },
-                'All projects'
-              ),
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-body' },
+    _createClass(Shop, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/projects').then(function (response) {
+                _this2.setState({
+                    projects: response.data
+                });
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                'section',
+                { className: 'categories_product_main p_80' },
                 __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-                  { className: 'btn btn-primary btn-sm mb-3', to: '/create' },
-                  'Create new project'
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  'ul',
-                  { className: 'list-group list-group-flush' },
-                  projects.map(function (project) {
-                    return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                      __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-                      {
-                        className: 'list-group-item list-group-item-action d-flex justify-content-between align-items-center',
-                        to: '/' + project.id,
-                        key: project.id
-                      },
-                      project.name,
-                      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        'span',
-                        { className: 'badge badge-primary badge-pill' },
-                        project.tasks_count
-                      )
-                    );
-                  })
+                    'div',
+                    { className: 'container' },
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        'div',
+                        { className: 'categories_main_inner' },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'div',
+                            { className: 'row row_disable' },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'col-lg-9 float-md-right' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'showing_fillter' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'row m0' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'first_fillter' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'Showing 1 to 12 of 30 total'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'secand_fillter' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'SORT BY :'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'select',
+                                                { className: 'selectpicker' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'option',
+                                                    null,
+                                                    'Name'
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'option',
+                                                    null,
+                                                    'Name 2'
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'option',
+                                                    null,
+                                                    'Name 3'
+                                                )
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'third_fillter' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'Show : '
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'select',
+                                                { className: 'selectpicker' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'option',
+                                                    null,
+                                                    '09'
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'option',
+                                                    null,
+                                                    '10'
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'option',
+                                                    null,
+                                                    '10'
+                                                )
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'four_fillter' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'View'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'a',
+                                                { className: 'active', href: '#' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_grid-2x2' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'a',
+                                                { href: '#' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_grid-3x3' })
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'c_product_grid_details' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'c_product_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'row' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'col-lg-4 col-md-6' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'c_product_img' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/l-product-2.jpg', alt: '' })
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'col-lg-8 col-md-6' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'c_product_text' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h3',
+                                                        null,
+                                                        'Nike Max Air Vapor Power'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h5',
+                                                        null,
+                                                        '$45.05'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'ul',
+                                                        { className: 'product_rating' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h6',
+                                                        null,
+                                                        'Available In ',
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'span',
+                                                            null,
+                                                            'Stock'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'p',
+                                                        null,
+                                                        'Curabitur semper varius lectus sed consequat. Nam accumsan dapibus sem, sed lobortis nisi porta vitae. Ut quam tortor, facilisis nec laoreet consequat, malesuada a massa. Proin pretium tristique leo et imperdiet.'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'ul',
+                                                        { className: 'c_product_btn' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            { className: 'p_icon' },
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_piechart' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { className: 'add_cart_btn', href: '#' },
+                                                                'Add To Cart'
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            { className: 'p_icon' },
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_heart_alt' })
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'c_product_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'row' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'col-lg-4 col-md-6' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'c_product_img' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/l-product-4.jpg', alt: '' })
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'col-lg-8 col-md-6' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'c_product_text' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h3',
+                                                        null,
+                                                        'Max Air Vapor Power'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h5',
+                                                        null,
+                                                        '$110.50'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'ul',
+                                                        { className: 'product_rating' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h6',
+                                                        null,
+                                                        'Available In ',
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'span',
+                                                            null,
+                                                            'Stock'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'p',
+                                                        null,
+                                                        'Curabitur semper varius lectus sed consequat. Nam accumsan dapibus sem, sed lobortis nisi porta vitae. Ut quam tortor, facilisis nec laoreet consequat, malesuada a massa. Proin pretium tristique leo et imperdiet.'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'ul',
+                                                        { className: 'c_product_btn' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            { className: 'p_icon' },
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_piechart' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { className: 'add_cart_btn', href: '#' },
+                                                                'Add To Cart'
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            { className: 'p_icon' },
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_heart_alt' })
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'c_product_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'row' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'col-lg-4 col-md-6' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'c_product_img' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/l-product-7.jpg', alt: '' })
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'col-lg-8 col-md-6' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'c_product_text' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h3',
+                                                        null,
+                                                        'Fossil Watch'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h5',
+                                                        null,
+                                                        '$250'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'ul',
+                                                        { className: 'product_rating' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h6',
+                                                        null,
+                                                        'Available In ',
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'span',
+                                                            null,
+                                                            'Stock'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'p',
+                                                        null,
+                                                        'Curabitur semper varius lectus sed consequat. Nam accumsan dapibus sem, sed lobortis nisi porta vitae. Ut quam tortor, facilisis nec laoreet consequat, malesuada a massa. Proin pretium tristique leo et imperdiet.'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'ul',
+                                                        { className: 'c_product_btn' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            { className: 'p_icon' },
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_piechart' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { className: 'add_cart_btn', href: '#' },
+                                                                'Add To Cart'
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            { className: 'p_icon' },
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_heart_alt' })
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'c_product_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'row' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'col-lg-4 col-md-6' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'c_product_img' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/l-product-8.jpg', alt: '' })
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'col-lg-8 col-md-6' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'c_product_text' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h3',
+                                                        null,
+                                                        'Jens T-Shirt'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h5',
+                                                        null,
+                                                        '$45.05'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'ul',
+                                                        { className: 'product_rating' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                                            )
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h6',
+                                                        null,
+                                                        'Available In ',
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'span',
+                                                            null,
+                                                            'Stock'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'p',
+                                                        null,
+                                                        'Curabitur semper varius lectus sed consequat. Nam accumsan dapibus sem, sed lobortis nisi porta vitae. Ut quam tortor, facilisis nec laoreet consequat, malesuada a massa. Proin pretium tristique leo et imperdiet.'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'ul',
+                                                        { className: 'c_product_btn' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            { className: 'p_icon' },
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_piechart' })
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            null,
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { className: 'add_cart_btn', href: '#' },
+                                                                'Add To Cart'
+                                                            )
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'li',
+                                                            { className: 'p_icon' },
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                                'a',
+                                                                { href: '#' },
+                                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_heart_alt' })
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'nav',
+                                        { 'aria-label': 'Page navigation example', className: 'pagination_area' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'ul',
+                                            { className: 'pagination' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { className: 'page-item' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { className: 'page-link', href: '#' },
+                                                    '1'
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { className: 'page-item' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { className: 'page-link', href: '#' },
+                                                    '2'
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { className: 'page-item' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { className: 'page-link', href: '#' },
+                                                    '3'
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { className: 'page-item' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { className: 'page-link', href: '#' },
+                                                    '4'
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { className: 'page-item' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { className: 'page-link', href: '#' },
+                                                    '5'
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { className: 'page-item' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { className: 'page-link', href: '#' },
+                                                    '6'
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { className: 'page-item next' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { className: 'page-link', href: '#' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-angle-right', 'aria-hidden': 'true' })
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'col-lg-3 float-md-right' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'categories_sidebar' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'aside',
+                                        { className: 'l_widgest l_p_categories_widget' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_w_title' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h3',
+                                                null,
+                                                'Categories'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'ul',
+                                            { className: 'navbar-nav' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { className: 'nav-item' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { className: 'nav-link', href: '#' },
+                                                    'Men\u2019s Fashion',
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_plus', 'aria-hidden': 'true' }),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_minus-06', 'aria-hidden': 'true' })
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { className: 'nav-item dropdown' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { className: 'nav-link dropdown-toggle', href: '#', id: 'navbarDropdown', role: 'button', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false' },
+                                                    'Women\u2019s Fashion',
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_plus', 'aria-hidden': 'true' }),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_minus-06', 'aria-hidden': 'true' })
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'ul',
+                                                    { className: 'dropdown-menu', 'aria-labelledby': 'navbarDropdown' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'li',
+                                                        { className: 'nav-item' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'a',
+                                                            { className: 'nav-link', href: '#' },
+                                                            'Hoodies & Sweatshirts'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'li',
+                                                        { className: 'nav-item' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'a',
+                                                            { className: 'nav-link', href: '#' },
+                                                            'Jackets & Coats'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'li',
+                                                        { className: 'nav-item' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'a',
+                                                            { className: 'nav-link', href: '#' },
+                                                            'Blouses & Shirts'
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { className: 'nav-item' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { className: 'nav-link', href: '#' },
+                                                    'Phone & Accessories',
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_plus', 'aria-hidden': 'true' }),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_minus-06', 'aria-hidden': 'true' })
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { className: 'nav-item' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { className: 'nav-link', href: '#' },
+                                                    'Electronic Appliance',
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_plus', 'aria-hidden': 'true' }),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_minus-06', 'aria-hidden': 'true' })
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { className: 'nav-item' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { className: 'nav-link disabled', href: '#' },
+                                                    'Computer & Networking',
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_plus', 'aria-hidden': 'true' }),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_minus-06', 'aria-hidden': 'true' })
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { className: 'nav-item' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { className: 'nav-link disabled', href: '#' },
+                                                    'TV, Audiio & Gaming',
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_plus', 'aria-hidden': 'true' }),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_minus-06', 'aria-hidden': 'true' })
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { className: 'nav-item' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { className: 'nav-link disabled', href: '#' },
+                                                    'Office Supplies',
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_plus', 'aria-hidden': 'true' }),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_minus-06', 'aria-hidden': 'true' })
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                { className: 'nav-item' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { className: 'nav-link disabled', href: '#' },
+                                                    'All Categories',
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_plus', 'aria-hidden': 'true' }),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_minus-06', 'aria-hidden': 'true' })
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'aside',
+                                        { className: 'l_widgest l_fillter_widget' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_w_title' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h3',
+                                                null,
+                                                'Filter section'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { id: 'slider-range', className: 'ui_slider' }),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'label',
+                                            { 'for': 'amount' },
+                                            'Price:'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { type: 'text', id: 'amount', readonly: true })
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'aside',
+                                        { className: 'l_widgest l_color_widget' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_w_title' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h3',
+                                                null,
+                                                'Color'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'ul',
+                                            null,
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            )
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'aside',
+                                        { className: 'l_widgest l_menufacture_widget' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_w_title' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h3',
+                                                null,
+                                                'Manufacturer'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'ul',
+                                            null,
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { href: '#' },
+                                                    'Nigel Cabourn.'
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { href: '#' },
+                                                    'Cacharel.'
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { href: '#' },
+                                                    'Calibre (Menswear)'
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { href: '#' },
+                                                    'Calvin Klein.'
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { href: '#' },
+                                                    'Camilla and Marc'
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'aside',
+                                        { className: 'l_widgest l_feature_widget' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_w_title' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h3',
+                                                null,
+                                                'Featured Products'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'media' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'd-flex' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/featured-product/f-p-5.jpg', alt: '' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'media-body' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'h4',
+                                                    null,
+                                                    'Jeans with ',
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null),
+                                                    ' Frayed Hems'
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'h5',
+                                                    null,
+                                                    '$45.05'
+                                                )
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'media' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'd-flex' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/featured-product/f-p-6.jpg', alt: '' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'div',
+                                                { className: 'media-body' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'h4',
+                                                    null,
+                                                    'Crysp Denim',
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null),
+                                                    'Montana'
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'h5',
+                                                    null,
+                                                    '$45.05'
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
                 )
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
+            );
+        }
+    }]);
 
-  return Shop;
+    return Shop;
 }(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (Shop);
@@ -63947,11 +66343,10 @@ var Shop = function (_Component) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(2);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -63959,7 +66354,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -63992,8 +66386,6 @@ var Cart = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            var projects = this.state.projects;
-
             return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
                 'section',
                 { className: 'shopping_cart_area p_100' },
@@ -64341,11 +66733,11 @@ var Cart = function (_Component) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(4);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -64359,89 +66751,215 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var Checkout = function (_Component) {
-  _inherits(Checkout, _Component);
+    _inherits(Checkout, _Component);
 
-  function Checkout() {
-    _classCallCheck(this, Checkout);
+    function Checkout() {
+        _classCallCheck(this, Checkout);
 
-    var _this = _possibleConstructorReturn(this, (Checkout.__proto__ || Object.getPrototypeOf(Checkout)).call(this));
+        var _this = _possibleConstructorReturn(this, (Checkout.__proto__ || Object.getPrototypeOf(Checkout)).call(this));
 
-    _this.state = {
-      projects: []
-    };
-    return _this;
-  }
-
-  _createClass(Checkout, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/projects').then(function (response) {
-        _this2.setState({
-          projects: response.data
-        });
-      });
+        _this.state = {
+            projects: []
+        };
+        return _this;
     }
-  }, {
-    key: 'render',
-    value: function render() {
-      var projects = this.state.projects;
 
-      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        'div',
-        { className: 'container py-4' },
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'div',
-          { className: 'row justify-content-center' },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'div',
-            { className: 'col-md-8' },
-            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-              'div',
-              { className: 'card' },
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-header' },
-                'All projects'
-              ),
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-body' },
+    _createClass(Checkout, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/projects').then(function (response) {
+                _this2.setState({
+                    projects: response.data
+                });
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                'section',
+                { className: 'checkout_method_area p_100' },
                 __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-                  { className: 'btn btn-primary btn-sm mb-3', to: '/create' },
-                  'Create new project'
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  'ul',
-                  { className: 'list-group list-group-flush' },
-                  projects.map(function (project) {
-                    return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                      __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-                      {
-                        className: 'list-group-item list-group-item-action d-flex justify-content-between align-items-center',
-                        to: '/' + project.id,
-                        key: project.id
-                      },
-                      project.name,
-                      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        'span',
-                        { className: 'badge badge-primary badge-pill' },
-                        project.tasks_count
-                      )
-                    );
-                  })
+                    'div',
+                    { className: 'container' },
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        'div',
+                        { className: 'row' },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'div',
+                            { className: 'checkout_main_area' },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'checkout_prosses' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'row m0' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-md-6' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'checkout_method' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h3',
+                                                null,
+                                                'check as a guest or register'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'Register with us for future convenience:'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'form',
+                                                { role: 'form', className: 'radio_area' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'ul',
+                                                    { className: 'radio_style' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'li',
+                                                        null,
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { type: 'radio', id: 'f-option', name: 'selector' }),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'label',
+                                                            { 'for': 'f-option' },
+                                                            'checkt as guest'
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { className: 'check' })
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'li',
+                                                        null,
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { type: 'radio', id: 's-option', name: 'selector' }),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'label',
+                                                            { 'for': 's-option' },
+                                                            'register'
+                                                        ),
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'div',
+                                                            { className: 'check' },
+                                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('div', { className: 'inside' })
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                null,
+                                                'register and save time !'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h6',
+                                                null,
+                                                'Register with us for future convenience:'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'a',
+                                                { className: 'checkout_list', href: '#' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'arrow_carrot-right' }),
+                                                ' Fast and easy check out'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'a',
+                                                { className: 'checkout_list', href: '#' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'arrow_carrot-right' }),
+                                                ' Easy access to your order history and status'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'a',
+                                                { className: 'update_btn', href: '#' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'span',
+                                                    null,
+                                                    'continue'
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-md-6' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'row checkout_from_area' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h2',
+                                                null,
+                                                'already registed ?'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'p',
+                                                null,
+                                                'Please log in below :'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'form',
+                                                { role: 'form' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'form-group' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'label',
+                                                        { 'for': 'email' },
+                                                        'Email address ',
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'span',
+                                                            null,
+                                                            '*'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { type: 'email', className: 'form-control', id: 'email' })
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'form-group' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'label',
+                                                        { 'for': 'pwd' },
+                                                        'Password ',
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                            'span',
+                                                            null,
+                                                            '*'
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { type: 'password', className: 'form-control', id: 'pwd' })
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'h3',
+                                                    null,
+                                                    '* Required Filelds'
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'div',
+                                                    { className: 'forgot_area' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'button',
+                                                        { type: 'submit', className: 'btn update_btn btn-default' },
+                                                        'log in'
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'h4',
+                                                        null,
+                                                        'Forgot Your Password ?'
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
                 )
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
+            );
+        }
+    }]);
 
-  return Checkout;
+    return Checkout;
 }(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (Checkout);
@@ -64451,11 +66969,11 @@ var Checkout = function (_Component) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(4);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -64469,89 +66987,183 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var Contact = function (_Component) {
-  _inherits(Contact, _Component);
+    _inherits(Contact, _Component);
 
-  function Contact() {
-    _classCallCheck(this, Contact);
+    function Contact() {
+        _classCallCheck(this, Contact);
 
-    var _this = _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).call(this));
+        var _this = _possibleConstructorReturn(this, (Contact.__proto__ || Object.getPrototypeOf(Contact)).call(this));
 
-    _this.state = {
-      projects: []
-    };
-    return _this;
-  }
-
-  _createClass(Contact, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/projects').then(function (response) {
-        _this2.setState({
-          projects: response.data
-        });
-      });
+        _this.state = {
+            projects: []
+        };
+        return _this;
     }
-  }, {
-    key: 'render',
-    value: function render() {
-      var projects = this.state.projects;
 
-      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        'div',
-        { className: 'container py-4' },
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'div',
-          { className: 'row justify-content-center' },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'div',
-            { className: 'col-md-8' },
-            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-              'div',
-              { className: 'card' },
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-header' },
-                'All projects'
-              ),
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-body' },
+    _createClass(Contact, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/projects').then(function (response) {
+                _this2.setState({
+                    projects: response.data
+                });
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                'section',
+                { className: 'contact_area p_100' },
                 __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-                  { className: 'btn btn-primary btn-sm mb-3', to: '/create' },
-                  'Create new project'
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  'ul',
-                  { className: 'list-group list-group-flush' },
-                  projects.map(function (project) {
-                    return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                      __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-                      {
-                        className: 'list-group-item list-group-item-action d-flex justify-content-between align-items-center',
-                        to: '/' + project.id,
-                        key: project.id
-                      },
-                      project.name,
-                      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        'span',
-                        { className: 'badge badge-primary badge-pill' },
-                        project.tasks_count
-                      )
-                    );
-                  })
+                    'div',
+                    { className: 'container' },
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        'div',
+                        { className: 'contact_title' },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'h2',
+                            null,
+                            'Get in Touch'
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'p',
+                            null,
+                            'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui.'
+                        )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        'div',
+                        { className: 'row contact_details' },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'div',
+                            { className: 'col-lg-4 col-md-6' },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'media' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'd-flex' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-map-marker', 'aria-hidden': 'true' })
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'media-body' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'p',
+                                        null,
+                                        'House # 402, Roboto Street,',
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('br', null),
+                                        'New York, USA.'
+                                    )
+                                )
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'div',
+                            { className: 'col-lg-4 col-md-6' },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'media' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'd-flex' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-phone', 'aria-hidden': 'true' })
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'media-body' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'a',
+                                        { href: 'tel:+1109171234567' },
+                                        '+110 - 917 - 123 - 4567'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'a',
+                                        { href: 'tel:+1101911897654' },
+                                        '+110 - 191 - 189 - 7654'
+                                    )
+                                )
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'div',
+                            { className: 'col-lg-4 col-md-6' },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'media' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'd-flex' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-envelope', 'aria-hidden': 'true' })
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'media-body' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'a',
+                                        { href: 'mailto:busines@persuit.com' },
+                                        'busines@persuit.com'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'a',
+                                        { href: 'mailto:support@persuit.com' },
+                                        'support@persuit.com'
+                                    )
+                                )
+                            )
+                        )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        'div',
+                        { className: 'contact_form_inner' },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'h3',
+                            null,
+                            'Drop a Message'
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'form',
+                            { className: 'contact_us_form row', action: 'contact_process.php', method: 'post', id: 'contactForm', novalidate: 'novalidate' },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'form-group col-lg-4' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'name', name: 'name', placeholder: 'Full Name *' })
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'form-group col-lg-4' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { type: 'email', className: 'form-control', id: 'email', name: 'email', placeholder: 'Email Address *' })
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'form-group col-lg-4' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'website', name: 'website', placeholder: 'Your Website' })
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'form-group col-lg-12' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('textarea', { className: 'form-control', name: 'message', id: 'message', rows: '1', placeholder: 'Type Your Message...' })
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'form-group col-lg-12' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'button',
+                                    { type: 'submit', value: 'submit', className: 'btn update_btn form-control' },
+                                    'Send Message'
+                                )
+                            )
+                        )
+                    )
                 )
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
+            );
+        }
+    }]);
 
-  return Contact;
+    return Contact;
 }(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (Contact);
@@ -64561,11 +67173,11 @@ var Contact = function (_Component) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(4);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -64606,53 +67218,29 @@ var EmptyCart = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var projects = this.state.projects;
-
       return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        'div',
-        { className: 'container py-4' },
+        'section',
+        { className: 'emty_cart_area p_100' },
         __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
           'div',
-          { className: 'row justify-content-center' },
+          { className: 'container' },
           __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
             'div',
-            { className: 'col-md-8' },
+            { className: 'emty_cart_inner' },
+            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon-handbag icons' }),
             __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-              'div',
-              { className: 'card' },
+              'h3',
+              null,
+              'Your Cart is Empty'
+            ),
+            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+              'h4',
+              null,
+              'back to ',
               __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-header' },
-                'All projects'
-              ),
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-body' },
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-                  { className: 'btn btn-primary btn-sm mb-3', to: '/create' },
-                  'Create new project'
-                ),
-                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  'ul',
-                  { className: 'list-group list-group-flush' },
-                  projects.map(function (project) {
-                    return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                      __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-                      {
-                        className: 'list-group-item list-group-item-action d-flex justify-content-between align-items-center',
-                        to: '/' + project.id,
-                        key: project.id
-                      },
-                      project.name,
-                      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        'span',
-                        { className: 'badge badge-primary badge-pill' },
-                        project.tasks_count
-                      )
-                    );
-                  })
-                )
+                'a',
+                { href: '#' },
+                'shopping'
               )
             )
           )
@@ -64671,11 +67259,11 @@ var EmptyCart = function (_Component) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(4);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -64689,89 +67277,803 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var Product = function (_Component) {
-  _inherits(Product, _Component);
+    _inherits(Product, _Component);
 
-  function Product() {
-    _classCallCheck(this, Product);
+    function Product() {
+        _classCallCheck(this, Product);
 
-    var _this = _possibleConstructorReturn(this, (Product.__proto__ || Object.getPrototypeOf(Product)).call(this));
+        var _this = _possibleConstructorReturn(this, (Product.__proto__ || Object.getPrototypeOf(Product)).call(this));
 
-    _this.state = {
-      projects: []
-    };
-    return _this;
-  }
-
-  _createClass(Product, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/projects').then(function (response) {
-        _this2.setState({
-          projects: response.data
-        });
-      });
+        _this.state = {
+            projects: []
+        };
+        return _this;
     }
-  }, {
-    key: 'render',
-    value: function render() {
-      var projects = this.state.projects;
 
-      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-        'div',
-        { className: 'container py-4' },
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-          'div',
-          { className: 'row justify-content-center' },
-          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'div',
-            { className: 'col-md-8' },
-            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-              'div',
-              { className: 'card' },
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+    _createClass(Product, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/api/projects').then(function (response) {
+                _this2.setState({
+                    projects: response.data
+                });
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
                 'div',
-                { className: 'card-header' },
-                'All projects'
-              ),
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'div',
-                { className: 'card-body' },
+                null,
                 __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-                  { className: 'btn btn-primary btn-sm mb-3', to: '/create' },
-                  'Create new project'
+                    'section',
+                    { className: 'product_details_area' },
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        'div',
+                        { className: 'container' },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'div',
+                            { className: 'row' },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'col-lg-4' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'product_details_slider' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { id: 'product_slider', className: 'rev_slider', 'data-version': '5.3.1.6' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: 'img/product/product-details/p-details-big-1.jpg', alt: '', 'data-bgposition': 'center center', 'data-bgfit': 'cover', 'data-bgrepeat': 'no-repeat', 'data-bgparallax': '5', className: 'rev-slidebg', 'data-no-retina': true })
+                                    )
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'col-lg-8' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'product_details_text' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'h3',
+                                        null,
+                                        'Nike Flex Run Tracksuit'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'ul',
+                                        { className: 'p_rating' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'li',
+                                            null,
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'a',
+                                                { href: '#' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'li',
+                                            null,
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'a',
+                                                { href: '#' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'li',
+                                            null,
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'a',
+                                                { href: '#' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'li',
+                                            null,
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'a',
+                                                { href: '#' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'li',
+                                            null,
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'a',
+                                                { href: '#' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                            )
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'add_review' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { href: '#' },
+                                            '5 Reviews'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { href: '#' },
+                                            'Add your review'
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'h6',
+                                        null,
+                                        'Available In ',
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'span',
+                                            null,
+                                            'Stock'
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'h4',
+                                        null,
+                                        '$45.05'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'p',
+                                        null,
+                                        'Curabitur semper varius lectus sed consequat. Nam accumsan dapibus sem, sed lobortis nisi porta vitae. Ut quam tortor, facilisis nec laoreet consequat, malesuada a massa. Proin pretium tristique leo et imperdiet.'
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'p_color' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'h4',
+                                            { className: 'p_d_title' },
+                                            'color ',
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'span',
+                                                null,
+                                                '*'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'ul',
+                                            { className: 'color_list' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a', { href: '#' })
+                                            )
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'p_color' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'h4',
+                                            { className: 'p_d_title' },
+                                            'size ',
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'span',
+                                                null,
+                                                '*'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'select',
+                                            { className: 'selectpicker' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'option',
+                                                null,
+                                                'Select your size'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'option',
+                                                null,
+                                                'Select your size M'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'option',
+                                                null,
+                                                'Select your size XL'
+                                            )
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'quantity' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'custom' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'button',
+                                                { onclick: 'var result = document.getElementById(\'sst\'); var sst = result.value; if( !isNaN( sst ) && sst > 0 ) result.value--;return false;', className: 'reduced items-count', type: 'button' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_minus-06' })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('input', { type: 'text', name: 'qty', id: 'sst', maxlength: '12', value: '01', title: 'Quantity:', className: 'input-text qty' }),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'button',
+                                                { onclick: 'var result = document.getElementById(\'sst\'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;', className: 'increase items-count', type: 'button' },
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_plus' })
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { className: 'add_cart_btn', href: '#' },
+                                            'add to cart'
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'shareing_icon' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'h5',
+                                            null,
+                                            'share :'
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'ul',
+                                            null,
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { href: '#' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'social_facebook' })
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { href: '#' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'social_twitter' })
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { href: '#' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'social_pinterest' })
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { href: '#' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'social_instagram' })
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'li',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'a',
+                                                    { href: '#' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'social_youtube' })
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
                 ),
                 __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                  'ul',
-                  { className: 'list-group list-group-flush' },
-                  projects.map(function (project) {
-                    return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                      __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-                      {
-                        className: 'list-group-item list-group-item-action d-flex justify-content-between align-items-center',
-                        to: '/' + project.id,
-                        key: project.id
-                      },
-                      project.name,
-                      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                        'span',
-                        { className: 'badge badge-primary badge-pill' },
-                        project.tasks_count
-                      )
-                    );
-                  })
+                    'section',
+                    { className: 'product_description_area' },
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        'div',
+                        { className: 'container' },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'nav',
+                            { className: 'tab_menu' },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'nav nav-tabs', id: 'nav-tab', role: 'tablist' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'a',
+                                    { className: 'nav-item nav-link active', id: 'nav-home-tab', 'data-toggle': 'tab', href: '#nav-home', role: 'tab', 'aria-controls': 'nav-home', 'aria-selected': 'true' },
+                                    'Product Description'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'a',
+                                    { className: 'nav-item nav-link', id: 'nav-profile-tab', 'data-toggle': 'tab', href: '#nav-profile', role: 'tab', 'aria-controls': 'nav-profile', 'aria-selected': 'false' },
+                                    'Reviews (1)'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'a',
+                                    { className: 'nav-item nav-link', id: 'nav-contact-tab', 'data-toggle': 'tab', href: '#nav-contact', role: 'tab', 'aria-controls': 'nav-contact', 'aria-selected': 'false' },
+                                    'Tags'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'a',
+                                    { className: 'nav-item nav-link', id: 'nav-info-tab', 'data-toggle': 'tab', href: '#nav-info', role: 'tab', 'aria-controls': 'nav-info', 'aria-selected': 'false' },
+                                    'additional information'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'a',
+                                    { className: 'nav-item nav-link', id: 'nav-gur-tab', 'data-toggle': 'tab', href: '#nav-gur', role: 'tab', 'aria-controls': 'nav-gur', 'aria-selected': 'false' },
+                                    'gurantees'
+                                )
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'div',
+                            { className: 'tab-content', id: 'nav-tabContent' },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'tab-pane fade show active', id: 'nav-home', role: 'tabpanel', 'aria-labelledby': 'nav-home-tab' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'p',
+                                    null,
+                                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.  Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.'
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'tab-pane fade', id: 'nav-profile', role: 'tabpanel', 'aria-labelledby': 'nav-profile-tab' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'h4',
+                                    null,
+                                    'Rocky Ahmed'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'ul',
+                                    null,
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'li',
+                                        null,
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { href: '#' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'li',
+                                        null,
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { href: '#' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'li',
+                                        null,
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { href: '#' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'li',
+                                        null,
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { href: '#' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'li',
+                                        null,
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { href: '#' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-star' })
+                                        )
+                                    )
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'tab-pane fade', id: 'nav-contact', role: 'tabpanel', 'aria-labelledby': 'nav-contact-tab' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'p',
+                                    null,
+                                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.  Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.'
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'tab-pane fade', id: 'nav-info', role: 'tabpanel', 'aria-labelledby': 'nav-info-tab' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'p',
+                                    null,
+                                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.  Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.'
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'tab-pane fade', id: 'nav-gur', role: 'tabpanel', 'aria-labelledby': 'nav-gur-tab' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'p',
+                                    null,
+                                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.  Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.'
+                                )
+                            )
+                        )
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                    'section',
+                    { className: 'related_product_area' },
+                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                        'div',
+                        { className: 'container' },
+                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                            'div',
+                            { className: 'related_product_inner' },
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'h2',
+                                { className: 'single_c_title' },
+                                'Related Product'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'div',
+                                { className: 'row' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-3 col-sm-6' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'l_product_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_img' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/related-product/r-product-1.jpg', alt: '' })
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'ul',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_piechart' })
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { className: 'add_cart_btn', href: '#' },
+                                                        'Add To Cart'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_heart_alt' })
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'Run Tracksuit'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                null,
+                                                '$85.50'
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-3 col-sm-6' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'l_product_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_img' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/related-product/r-product-2.jpg', alt: '' }),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                { className: 'new' },
+                                                'New'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'ul',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_piechart' })
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { className: 'add_cart_btn', href: '#' },
+                                                        'Add To Cart'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_heart_alt' })
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'Nike Men Trouser'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'del',
+                                                    null,
+                                                    '$130.50'
+                                                ),
+                                                '  $110'
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-3 col-sm-6' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'l_product_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_img' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/related-product/r-product-3.jpg', alt: '' })
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'ul',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_piechart' })
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { className: 'add_cart_btn', href: '#' },
+                                                        'Add To Cart'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_heart_alt' })
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'Nike Track Pants'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                null,
+                                                '$250.00'
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'div',
+                                    { className: 'col-lg-3 col-sm-6' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'div',
+                                        { className: 'l_product_item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_img' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/related-product/r-product-4.jpg', alt: '' }),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                { className: 'sale' },
+                                                'Sale'
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'div',
+                                            { className: 'l_p_text' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'ul',
+                                                null,
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_piechart' })
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    null,
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { className: 'add_cart_btn', href: '#' },
+                                                        'Add To Cart'
+                                                    )
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                    'li',
+                                                    { className: 'p_icon' },
+                                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                        'a',
+                                                        { href: '#' },
+                                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'icon_heart_alt' })
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h4',
+                                                null,
+                                                'Therma Pants'
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                                'h5',
+                                                null,
+                                                '$45.50'
+                                            )
+                                        )
+                                    )
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                'nav',
+                                { 'aria-label': 'Page navigation example', className: 'pagination_area' },
+                                __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                    'ul',
+                                    { className: 'pagination' },
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'li',
+                                        { className: 'page-item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { className: 'page-link', href: '#' },
+                                            '1'
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'li',
+                                        { className: 'page-item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { className: 'page-link', href: '#' },
+                                            '2'
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'li',
+                                        { className: 'page-item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { className: 'page-link', href: '#' },
+                                            '3'
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'li',
+                                        { className: 'page-item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { className: 'page-link', href: '#' },
+                                            '4'
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'li',
+                                        { className: 'page-item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { className: 'page-link', href: '#' },
+                                            '5'
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'li',
+                                        { className: 'page-item' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { className: 'page-link', href: '#' },
+                                            '6'
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                        'li',
+                                        { className: 'page-item next' },
+                                        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+                                            'a',
+                                            { className: 'page-link', href: '#' },
+                                            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('i', { className: 'fa fa-angle-right', 'aria-hidden': 'true' })
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
                 )
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
+            );
+        }
+    }]);
 
-  return Product;
+    return Product;
 }(__WEBPACK_IMPORTED_MODULE_1_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (Product);
@@ -64781,11 +68083,11 @@ var Product = function (_Component) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(4);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -64826,8 +68128,6 @@ var Register = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            var projects = this.state.projects;
-
             return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
                 'section',
                 { className: 'register_area p_100' },
@@ -65411,11 +68711,11 @@ var Register = function (_Component) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(4);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -65456,8 +68756,6 @@ var Login = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
-            var projects = this.state.projects;
-
             return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
                 'section',
                 { className: 'login_area p_100' },
@@ -65609,11 +68907,11 @@ var Login = function (_Component) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(4);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -65654,8 +68952,6 @@ var Page404 = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var projects = this.state.projects;
-
       return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
         'div',
         { className: 'container py-4' },

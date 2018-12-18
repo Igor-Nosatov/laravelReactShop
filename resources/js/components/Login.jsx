@@ -19,7 +19,6 @@ class Login extends Component {
   }
 
   render () {
-    const { projects } = this.state
     return (
       <section className="login_area p_100">
           <div className="container">

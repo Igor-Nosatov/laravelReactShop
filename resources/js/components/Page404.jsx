@@ -19,7 +19,6 @@ class Page404 extends Component {
   }
 
   render () {
-    const { projects } = this.state
     return (
       <div className='container py-4'>
         <div className='row justify-content-center'>
