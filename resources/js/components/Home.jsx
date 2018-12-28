@@ -6,12 +6,12 @@ class Home extends Component {
   constructor () {
     super()
     this.state = {
-      projects: []
+      products: []
     }
   }
 
   componentDidMount () {
-    axios.get('/api/projects').then(response => {
+    axios.get('/api/').then(response => {
       this.setState({
         projects: response.data
       })
