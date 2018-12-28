@@ -18,7 +18,7 @@ class CreateTableProducts extends Migration
             $table->string('name');
             $table->string('image');
             $table->float('price');
-            $tbale->boolean('avaible');
+            $table->boolean('avaible');
             $table->text('description');
             $table->timestamps();
         });
